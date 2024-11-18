@@ -10,12 +10,109 @@ Comment Out Code Command + /
     <meta charset="utf-8" />
     <title>Unit 4 - Flexbox</title>
     <style>
- 
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+
+      .flip-card-back {
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+      }
+
+      .main {
+/*         background-color: green; */
+        display: flex;
+        justify-content: space-around;
+      }
     </style>
   </head>
   <body>
     <h1>Jungle Animals</h1>
-
-   
+    <div class="main">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              src="https://rajajijunglesafari.com/wp-content/uploads/wild-rabbit-3.jpg"
+              alt="Avatar"
+              style="width: 300px; height: 300px"
+            />
+          </div>
+          <div class="flip-card-back">
+            <h1>Rabbito</h1>
+            <p>itsa rabbit</p>
+            <p>We love that dude</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Walking_tiger_female.jpg/640px-Walking_tiger_female.jpg"
+              alt="Avatar"
+              style="width: 300px; height: 300px"
+            />
+          </div>
+          <div class="flip-card-back">
+            <h1>tiger</h1>
+            <p>yo thats tigress from kung fu panda</p>
+            <p>We love that girl</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Schabrackentapir_Tapirus_indicus_Tiergarten-Nuernberg-1.jpg/1200px-Schabrackentapir_Tapirus_indicus_Tiergarten-Nuernberg-1.jpg"
+              alt="Avatar"
+              style="width: 300px; height: 300px"
+            />
+          </div>
+          <div class="flip-card-back">
+            <h1>Tapir</h1>
+            <p>Fire as hell</p>
+            <p>Little legs so cute hes so goated</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
